@@ -109,6 +109,7 @@ ifneq ($(KERNELRELEASE),)
 # than the passed version, return 1 if equal or the current kernel version if it
 # is greater than argument version.
 kvers_cmp=$(shell [ "$(KERNELVERSION)" = "$(1)" ] && echo 1 || printf "$(1)\n$(KERNELVERSION)" | sort -V | tail -1)
+endif
 
 ifneq ($(call kvers_cmp,"3.19.0"),3.19.0)
     CONFIG_OPTIONS_ENABLE += LEDS_CLASS_FLASH
@@ -121,14 +122,6 @@ endif
 #The new mods hw designation has add an gpio for spi/i2c select
 ifeq ($(CONFIG_MODS_2ND_GEN), y)
 CONFIG_OPTIONS_ENABLE += MODS_2ND_GEN
-endif
-
-$(foreach opt,$(CONFIG_OPTIONS_ENABLE),$(if $(CONFIG_$(opt)),, \
-     $(error CONFIG_$(opt) is disabled in the kernel configuration and must be enable \
-     to continue compilation)))
-$(foreach opt,$(CONFIG_OPTIONS_DISABLE),$(if $(filter m y, $(CONFIG_$(opt))), \
-     $(error CONFIG_$(opt) is enabled in the kernel configuration and must be disable \
-     to continue compilation),))
 endif
 
 # add -Wall to try to catch everything we can.
