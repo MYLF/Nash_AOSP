@@ -41,6 +41,8 @@ Module.symvers
 #
 # Top-level generic files
 #
+build.sh
+dirty.sh
 /out
 /tags
 /TAGS
