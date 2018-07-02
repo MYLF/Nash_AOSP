@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 4.4.137 Kernel Configuration
+# Linux/arm64 4.4.138 Kernel Configuration
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -41,9 +41,9 @@ CONFIG_BUILDTIME_EXTABLE_SORT=y
 # General setup
 #
 CONFIG_INIT_ENV_ARG_LIMIT=32
-CONFIG_CROSS_COMPILE=""
+CONFIG_CROSS_COMPILE="LLVM-Clang-7.2"
 # CONFIG_COMPILE_TEST is not set
-CONFIG_LOCALVERSION="-Pantheon-v2.1"
+CONFIG_LOCALVERSION="-Pantheon-v2.2"
 # CONFIG_LOCALVERSION_AUTO is not set
 CONFIG_DEFAULT_HOSTNAME="(none)"
 CONFIG_SWAP=y
